@@ -1,3 +1,4 @@
+import 'package:chatapp/view/NavBar/Navbar.dart';
 import 'package:chatapp/view/chatPage/chatPage.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home:  Scaffold(
-        body: Chatpage(),
+        body: NavBar(),
       ) 
     );
   }
