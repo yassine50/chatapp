@@ -7,9 +7,12 @@ class AllText {
       {required String text,
       required double fontSize,
       required fontWeight,
-      required color}) {
+      required color,
+      TextAlign textAlign =TextAlign.left ,
+      }) {
     return AutoSizeText(
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
+      // textDirection: TextDirection.ltr, 
       text,
       style: GoogleFonts.rubik(
         textStyle:

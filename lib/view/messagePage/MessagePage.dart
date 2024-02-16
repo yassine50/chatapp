@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:chatapp/view/common%20widgets/forms/InputFild/InputFild.dart';
 import 'package:chatapp/view/common%20widgets/text/text.dart';
+import 'package:chatapp/view/messagePage/widget/message.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -13,6 +15,7 @@ class MessagePage extends StatefulWidget {
 }
 
 class _MessagePageState extends State<MessagePage> {
+  TextEditingController message  = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -62,8 +65,35 @@ class _MessagePageState extends State<MessagePage> {
           width: size.width,
           color: Colors.grey,
         ),
-              SizedBox(height: size.height*0.04,),
-              
+              // SizedBox(height: size.height*0.04,),
+              Expanded(
+                child:ListView.builder(
+  itemCount: 5,
+  itemBuilder: (context, index) {
+    return Message(me: true,);
+  },
+),
+           
+              ),
+              Container(
+                height: 50,
+                width: size.width,
+                 padding:EdgeInsets.all(3) , 
+                  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(30),
+    color: Colors.grey.withOpacity(0.2),
+    // boxShadow: [
+    //   BoxShadow(color: Colors.green, spreadRadius: 3),
+    // ],
+  ),
+                 child:
+                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Search(controller: message, hint: 'type your message here', obscureText: false, size: size,)
+                 ],)
+                 ),
+
           ]),
         )
          ),
