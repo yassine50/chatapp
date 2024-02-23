@@ -10,6 +10,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive/hive.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -251,10 +252,15 @@ class _LoginState extends State<Login> {
                     ),
                   );
                 }
+                  var account = Hive.box('account');
+    await account.put('user', {'name': Account().fullName,'email': Account().email,'id':Account().accountID,"password":Account().password,});
+               Map acc = account.get('user');
+               print(acc["email"]);
               } else {
                 if ((emailController.text == "") ||
                     passController == "" ||
                     nameController == "") {
+                      
                 } else {
                   if (GetUtils.isEmail(emailController.text)) {
                     bool value = await FB_Auth()
