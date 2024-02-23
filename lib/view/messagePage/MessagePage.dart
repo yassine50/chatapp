@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chatapp/view/common%20widgets/forms/InputFild/InputFild.dart';
+import 'package:chatapp/view/common%20widgets/forms/InputFild/sendMessage.dart';
 import 'package:chatapp/view/common%20widgets/text/text.dart';
 import 'package:chatapp/view/messagePage/widget/message.dart';
 import 'package:flutter/cupertino.dart';
@@ -59,7 +60,7 @@ class _MessagePageState extends State<MessagePage> {
                       AllText.Autotext(text: "Yassine", fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black) ,
                   ],),
               ),
-                     Container(
+              Container(
           margin: EdgeInsets.only(bottom: 12,top: 12),
           height: 1,
           width: size.width,
@@ -75,25 +76,8 @@ class _MessagePageState extends State<MessagePage> {
 ),
            
               ),
-              Container(
-                height: 50,
-                width: size.width,
-                 padding:EdgeInsets.all(3) , 
-                  decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(30),
-    color: Colors.grey.withOpacity(0.2),
-    // boxShadow: [
-    //   BoxShadow(color: Colors.green, spreadRadius: 3),
-    // ],
-  ),
-                 child:
-                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Search(controller: message, hint: 'type your message here', obscureText: false, size: size,)
-                 ],)
-                 ),
-
+         SendMessage(controller: message, hint: 'type your message here', obscureText: false, size: size,)
+        
           ]),
         )
          ),

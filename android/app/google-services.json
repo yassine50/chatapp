@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "279881515402",
+    "project_id": "chatapp-f4307",
+    "storage_bucket": "chatapp-f4307.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279881515402:android:249107ca5c544fe2ab8873",
+        "android_client_info": {
+          "package_name": "com.chatapp.chatwx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc2J88a0F-Xs5I4HoBYMciCfb4U_9A5K4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

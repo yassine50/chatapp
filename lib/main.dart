@@ -1,8 +1,19 @@
 import 'package:chatapp/view/NavBar/Navbar.dart';
 import 'package:chatapp/view/chatPage/chatPage.dart';
+import 'package:chatapp/view/login/login.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  //   await FirebaseAppCheck.instance.activate(
+  //   webProvider: ReCaptchaV3Provider('recaptcha-v3-site-key'),
+  //   androidProvider: AndroidProvider.debug,
+  //   appleProvider: AppleProvider.appAttest,
+  // );
   runApp(const MyApp());
 }
 
@@ -15,7 +26,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home:  Scaffold(
-        body: NavBar(),
+        body: Login () , 
+        // NavBar(),
       ) 
     );
   }
