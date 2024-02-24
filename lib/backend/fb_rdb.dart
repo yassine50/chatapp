@@ -54,28 +54,11 @@ class FB_RBD {
     }
   }
 
-  Object Get_Data(String path) async {
+ Future<DataSnapshot> Get_Data(String path) async {
     final ref = FirebaseDatabase.instance.ref();
-    try {
-      final snapshot = await ref.child(path).get();
-      return snapshot.value;
-    }on Error catch (error) {
-      FB_RBD fb = FB_RBD() ;
-      fb.Update_Data("/logFile/"+Tools.Cast_email(Account().accountID)+"/"+Tools.Cast_email(Account().accountID)+"/"+Tools().timestampRelative.toString(), {
-        "path":path.toString(),
-        "log" : error.toString()
-      });
-      throw Exception('An error occurred during the database operation');
-      print('Caught error: $error');
-      // Handle the error here
-    }on FirebaseException catch  (e) {
-         FB_RBD fb = FB_RBD() ;
-      fb.Update_Data("/logFile/"+Tools.Cast_email(Account().accountID)+"/"+Tools.Cast_email(Account().accountID)+"/"+Tools().timestampRelative.toString(), {
-        "path":path.toString(),
-        "log" : e.toString()
-      });
-      throw Exception('An error occurred during the database operation');
-}
+final snapshot = await ref.child("Accounts/adem/Allow_profile_pic").get();
+print(snapshot.value);
+  return  snapshot ;
   }
 
   Future<int> Number_node(String path) async {
